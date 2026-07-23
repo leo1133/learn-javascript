@@ -58,19 +58,70 @@
 // getTotal(orders);
 
 // Bài 4: Bài tập sử dụng for...in
-function run(object) {
-  var arr = [];
+// function run(object) {
+//   var arr = [];
 
-  for (var key in object) {
-    arr.push(`Thuộc tính ${key} có giá trị ${object[key]}`);
-  }
-  return arr;
-}
+//   for (var key in object) {
+//     arr.push(`Thuộc tính ${key} có giá trị ${object[key]}`);
+//   }
+//   return arr;
+// }
 
 // Expected results:
-console.log(run({ name: "Nguyen Van A", age: 16 }));
 // Output:
 // [
 //     "Thuộc tính name có giá trị Nguyen Van A",
 //     "Thuộc tính age có giá trị 16"
 // ]
+
+// Bài 5: Cho 1 mảng gồm các sản phẩm, hiển thị ra object bao gồm thông tin và giá trị của từng sản phẩm và tổng tiền của tất cả sản phẩm:
+
+var products = [
+  {
+    name: "Bàn phím Gaming",
+    price: 500000,
+    quantity: 3,
+  },
+  {
+    name: "Chuột Gaming",
+    price: 200000,
+    quantity: 2,
+  },
+  {
+    name: "Bàn di chuột",
+    price: 20000,
+    quantity: 5,
+  },
+];
+
+function object(array) {
+  var array = [];
+  var totalPrice = 0;
+
+  for (var product of products) {
+    var totalProductPrice = product.price * product.quantity;
+
+    array.push(`${product.name} có giá trị là ${totalProductPrice}`);
+    totalPrice = totalPrice + totalProductPrice;
+  }
+
+  // var result = {};
+  // result.products = array;
+  // result.totalPrice = totalPrice;
+
+  return {
+    products: array,
+    totalPrice,
+  };
+}
+console.log("object(products); :>> ", object(products));
+
+// Output:
+// {
+//   products: [
+//     "Bàn phím Gaming có giá trị là 1500000",
+//     "Chuột Gaming có giá trị là 400000",
+//     "Bàn di chuột có giá trị là 100000",
+//   ],
+//   totalPrice: 2000000,
+// };
