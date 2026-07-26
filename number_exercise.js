@@ -9,8 +9,6 @@ function isNumber(value) {
 
   return result;
 }
-
-// Expected results:
 console.log(isNumber(999)); // true
 console.log(isNumber("abc")); // false
 console.log(isNumber("100")); // false
